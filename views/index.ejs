@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+    <div class="heading">
+        <h1 data-text="NOTES!">NOTES!</h1>
+
+
+    </div>
+
+
+
+    <% for(post of posts){    %> 
+        <div class="post"> 
+            <h3 class="user"> @<%= post.username   %></h3>
+            <h4 class="content">  <%= post.content   %></h4>
+            <a href="http://localhost:8080/posts/<%= post.id %>"> See in detail</a>
+            <a href="http://localhost:8080/posts/<%= post.id %>/edit"> edit </a>
+            <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                <br>  <button>Delete</button>
+            </form>
+            
+
+        </div>
+        
+       
+    <%  } %>
+
+
+    <br><br><br>
+    <a href="http://localhost:8080/posts/new"> Create new Note</a>
+</body>
+</html>
