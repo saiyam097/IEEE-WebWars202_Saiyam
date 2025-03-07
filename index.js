@@ -81,5 +81,5 @@ app.delete("/posts/:id", (req,res)=>{
 })
 
 app.listen(port, () => {
-    console.log("App is listening");
+    console.log("Server is runni ng on http://localhost:${port}/posts");
 });
